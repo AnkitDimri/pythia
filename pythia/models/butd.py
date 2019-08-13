@@ -155,5 +155,6 @@ class BUTD(Pythia):
         model_output = {"scores": scores}
         if self.config["inference"]["type"] == "beam_search":
             model_output["captions"] = beam_search.best_score()
+            model_output['beam'] = beam_search
 
         return model_output
